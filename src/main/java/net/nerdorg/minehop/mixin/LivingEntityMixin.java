@@ -11,6 +11,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -40,8 +41,8 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Shadow protected abstract Vec3d applyClimbingSpeed(Vec3d velocity);
     @Shadow protected abstract float getJumpVelocity();
-    @Shadow public abstract boolean hasStatusEffect(StatusEffect effect);
-    @Shadow public abstract StatusEffectInstance getStatusEffect(StatusEffect effect);
+    @Shadow public abstract boolean hasStatusEffect(RegistryEntry<StatusEffect> effect);
+    @Shadow public abstract StatusEffectInstance getStatusEffect(RegistryEntry<StatusEffect> effect);
     @Shadow public abstract boolean isFallFlying();
     @Shadow public abstract boolean isClimbing();
 
